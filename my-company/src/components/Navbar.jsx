@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../public/smartpen.jpg";
+import logo from "/public/smartpen.jpg";
 
 function Navbar() {
   return (

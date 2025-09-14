@@ -17,8 +17,8 @@ const [description, setDescription] = useState(recipe?.description || '');
 if (!recipe) return <p>Recipe not found.</p>;
 
 
-const handleSubmit = (e) => {
-e.preventDefault();
+const handleSubmit = (event) => {
+event.preventDefault();
 if (!title.trim() || !description.trim()) return;
 updateRecipe(id, { title: title.trim(), description: description.trim() });
 navigate(`/recipes/${id}`);

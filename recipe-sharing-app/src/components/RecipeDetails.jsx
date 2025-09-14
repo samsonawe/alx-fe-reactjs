@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { useRecipeStore } from './recipeStore';
 import DeleteRecipeButton from './DeleteRecipeButton';
+import FavoriteButton from './FavoriteButton';
 
 
 function RecipeDetails() {
@@ -13,7 +14,10 @@ if (!recipe) return <p>Recipe not found.</p>;
 
 return (
 <div>
-<h1>{recipe.title}</h1>
+<h1>
+    {recipe.title}
+    <FavoriteButton id={recipe.id} />
+</h1>
 <p>{recipe.description}</p>
 
 <p><strong>Recipe ID:</strong> {recipe.id}</p>

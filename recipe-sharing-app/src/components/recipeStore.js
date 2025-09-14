@@ -1,8 +1,9 @@
 import { create } from 'zustand'; 
 
-export const useRecipeStore = create((set) => ({
+export const useRecipeStore = create((set, get) => ({
   recipes: [],
-  searchTerm: '',
+  favorites: [],
+  recommendations: [],
 
   addRecipe: (newRecipe) =>
     set((state) => ({ recipes: [...state.recipes, newRecipe] })),
@@ -19,14 +20,41 @@ export const useRecipeStore = create((set) => ({
 
   setRecipes: (recipes) => set({ recipes }),
 
-  // 🔑 Search/filter
-  setSearchTerm: (term) => set({ searchTerm: term }),
-  filteredRecipes: (state) => {
-    if (!state.searchTerm) return state.recipes;
-    return state.recipes.filter(
+  // Favorites
+  addFavorite: (id) =>
+    set((state) =>
+      state.favorites.includes(id)
+        ? state // prevent duplicates
+        : { favorites: [...state.favorites, id] }
+    ),
+
+  removeFavorite: (id) =>
+    set((state) => ({
+      favorites: state.favorites.filter((f) => f !== id),
+    })),
+
+  // Simple recommendation logic
+  generateRecommendations: () => {
+    const { favorites, recipes } = get();
+    if (favorites.length === 0) {
+      set({ recommendations: [] });
+      return;
+    }
+
+    // Mock logic: recommend recipes that share at least 1 word in title/description with favorites
+    const favRecipes = recipes.filter((r) => favorites.includes(r.id));
+    const favWords = favRecipes
+      .map((r) => (r.title + ' ' + r.description).toLowerCase().split(/\s+/))
+      .flat();
+
+    const recommended = recipes.filter(
       (r) =>
-        r.title.toLowerCase().includes(state.searchTerm.toLowerCase()) ||
-        r.description.toLowerCase().includes(state.searchTerm.toLowerCase())
+        !favorites.includes(r.id) &&
+        favWords.some((word) =>
+          (r.title + ' ' + r.description).toLowerCase().includes(word)
+        )
     );
+
+    set({ recommendations: recommended });
   },
 }));

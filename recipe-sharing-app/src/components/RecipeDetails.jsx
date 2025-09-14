@@ -16,6 +16,7 @@ return (
 <h1>{recipe.title}</h1>
 <p>{recipe.description}</p>
 
+<p><strong>Recipe ID:</strong> {recipe.id}</p>
 
 <div style={{ marginTop: 12 }}>
 <Link to={`/recipes/${id}/edit`}>Edit</Link>

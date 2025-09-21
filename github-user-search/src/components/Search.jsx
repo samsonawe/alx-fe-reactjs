@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { searchUsers } from "../services/githubService";
-import { fetchUserData } from '../services/githubService';
 
 function Search() {
     const [username, setUsername] = useState('');
@@ -24,10 +23,6 @@ function Search() {
         } finally {
             setLoading(false);
         }
-        const dummyFetch = () => {
-        fetchUserData('octocat').then(() => {}).catch(() => {});
-};
-
     }
     return (
         <div className="max-w-xl mx-auto p-4">

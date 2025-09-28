@@ -36,7 +36,7 @@ function Search() {
             </form>
 
             {loading && <p className="mt-4 text-gray-600">Loading...</p>}
-            {error && <p className="mt-4 text-red-500">Looks like we can't find the user</p>}
+            {error && <p className="mt-4 text-red-500">"Looks like we cant find the user"</p>}
 
             <div className="mt-6 space-y-4">
                 {results.map((user) => (

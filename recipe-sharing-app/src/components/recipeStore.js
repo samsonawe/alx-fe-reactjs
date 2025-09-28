@@ -4,6 +4,21 @@ export const useRecipeStore = create((set, get) => ({
   recipes: [],
   favorites: [],
   recommendations: [],
+  searchTerm: '',
+  filteredRecipes: [],
+
+  setSearchTerm: (term) => {
+    set({ searchTerm: term });
+    get().filterRecipes(); // Trigger filtering when search term updates
+  },
+
+  filterRecipes: () => {
+    const { recipes, searchTerm } = get();
+    const filtered = recipes.filter((r) =>
+      r.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    set({ filteredRecipes: filtered });
+  },
 
   addRecipe: (newRecipe) =>
     set((state) => ({ recipes: [...state.recipes, newRecipe] })),

@@ -3,12 +3,73 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://placehold.co/150"
+    "image": "https://placehold.co/150?text=Spaghetti+\nCarbonara",
+    "ingredients": [
+      "200g spaghetti",
+      "100g pancetta or bacon",
+      "2 large eggs",
+      "50g Pecorino Romano cheese, grated",
+      "50g Parmesan cheese, grated",
+      "2 cloves garlic, peeled",
+      "Salt and black pepper to taste"
+    ],
+    "instructions": [
+      "Cook spaghetti in a large pot of salted boiling water until al dente.",
+      "In a pan, cook pancetta or bacon until crispy. Add garlic and sauté for 1 minute, then remove garlic.",
+      "In a bowl, whisk together eggs and both cheeses.",
+      "Drain spaghetti and add to the pan with pancetta. Remove from heat.",
+      "Quickly pour in the egg and cheese mixture, tossing to coat the pasta without scrambling the eggs.",
+      "Season with salt and black pepper. Serve immediately."
+    ]
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "https://placehold.co/150"
-  }
+    "image": "https://placehold.co/150?text=Chicken+\nTikka+Masala",
+    "ingredients": [
+      "500g boneless chicken",
+      "1 cup yogurt",
+      "2 tbsp tikka masala spice mix",
+      "1 onion, chopped",
+      "2 garlic cloves, minced",
+      "1 cup tomato puree",
+      "1/2 cup cream",
+      "2 tbsp oil",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Marinate chicken in yogurt and tikka masala spice mix for at least 1 hour.",
+      "Heat oil in a pan and sauté onions and garlic until golden brown.",
+      "Add marinated chicken and cook until done.",
+      "Add tomato puree and simmer for 10 minutes.",
+      "Stir in cream and cook for another 5 minutes.",
+      "Serve hot with rice or naan."
+    ]
+  },
+    {
+        "id": 3,
+        "title": "Vegetable Stir Fry",
+        "summary": "A quick and healthy vegetable stir fry with a savory sauce.",
+        "image": "https://placehold.co/150?text=Vegetable+\nStir+Fry",
+        "ingredients": [
+        "1 cup broccoli florets",
+        "1 cup bell peppers, sliced",
+        "1 cup snap peas",
+        "1 carrot, julienned",
+        "2 cloves garlic, minced",
+        "1 tbsp ginger, minced",
+        "2 tbsp soy sauce",
+        "1 tbsp oyster sauce",
+        "1 tsp sesame oil",
+        "2 tbsp vegetable oil"
+        ],
+        "instructions": [
+        "Heat vegetable oil in a wok or large pan over high heat.",
+        "Add garlic and ginger, sauté for 30 seconds until fragrant.",
+        "Add all vegetables and stir fry for 5-7 minutes until tender-crisp.",
+        "Add soy sauce, oyster sauce, and sesame oil. Toss to coat evenly.",
+        "Cook for another 2 minutes. Serve hot with rice or noodles."
+        ]
+    }
 ]

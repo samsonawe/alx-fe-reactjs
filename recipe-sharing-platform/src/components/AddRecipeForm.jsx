@@ -9,14 +9,18 @@ const AddRecipeForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+  const validate = () => {    
     const newErrors = {};
     if (!title.trim()) newErrors.title = 'Title is required';
     if (!ingredients.trim()) newErrors.ingredients = 'Ingredients are required';
     else if (ingredients.split(',').length < 2) newErrors.ingredients = 'Include at least two ingredients';
     if (!steps.trim()) newErrors.steps = 'Preparation steps are required';
-
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
+    return newErrors;
+  };
+  
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
       return;
     }
 

@@ -17,6 +17,8 @@ function PostsComponent() {
   } = useQuery('posts', fetchPosts, {
     staleTime: 5000,
     cacheTime: 10000,
+    refetchOnWindowFocus: true,
+    keepPreviousData: true,
   });
 
   if (isLoading) return <p>Loading posts...</p>;

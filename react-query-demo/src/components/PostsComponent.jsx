@@ -20,7 +20,7 @@ function PostsComponent() {
   });
 
   if (isLoading) return <p>Loading posts...</p>;
-  if (isError) return <p>Error fetching posts.</p>;
+  if (isError) return <p>error fetching posts.</p>;
 
   return (
     <div>

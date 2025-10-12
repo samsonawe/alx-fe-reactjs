@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { useState } from 'react';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
@@ -12,6 +12,7 @@ function App() {
   const handleLogout = () => setIsAuthenticated(false);
 
   return (
+    <BrowserRouter>
     <div>
       <nav>
         <Link to="/">Home</Link> | 
@@ -47,6 +48,7 @@ function App() {
         <Route path="/blog/:postId" element={<BlogPost />} />
       </Routes>
     </div>
+    </BrowserRouter>
   );
 }
 
